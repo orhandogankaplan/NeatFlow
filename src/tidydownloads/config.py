@@ -2,7 +2,7 @@
 
 from pathlib import Path
 from typing import Any, Dict
-import yaml
+from ruamel.yaml import YAML
 
 DEFAULT_CONFIG: Dict[str, Any] = {
     "watch_dir": "~/Downloads",
@@ -36,7 +36,7 @@ def load_config(config_path: str | Path | None = None) -> Dict[str, Any]:
         path = Path(config_path).expanduser()
         if path.exists():
             with path.open("r", encoding="utf-8") as f:
-                user_cfg = yaml.safe_load(f) or {}
+                user_cfg = YAML(typ="safe").load(f) or {}
             config.update(user_cfg)
     config["watch_dir"] = str(Path(config["watch_dir"]).expanduser().resolve())
     return config
