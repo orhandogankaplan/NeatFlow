@@ -19,7 +19,7 @@ Zamanla karmaşaya dönen **İndirilenler (`Downloads`)** klasörünü arka plan
 
 ### Seçenek 2: Python Paketi Olarak Kurulum
 ```bash
-git clone https://github.com/KULLANICI_ADIN/tidydownloads.git
+git clone https://github.com/orhandogankaplan/tidydownloads.git
 cd tidydownloads
 pip install -r requirements.txt
 pip install -e .
