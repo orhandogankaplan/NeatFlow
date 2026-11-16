@@ -1,0 +1,33 @@
+# TidyDownloads Yapılandırma Dosyası
+watch_dir: "~/Downloads"
+
+# Güvenli silme: true ise dosyalar kalıcı silinmez, Çöp Kutusuna taşınır
+use_trash: true
+
+# Eski dosya temizleme kuralları (gün cinsinden)
+cleanup:
+  enabled: true
+  max_age_days: 30
+  # Sadece belirli kategorilerdeki eski dosyaları silmek için (boşsa tüm kategoriler)
+  target_categories:
+    - "Kurulumlar"
+    - "Arsivler"
+  # Silme işlemi sonrası masaüstü bildirimi gönder
+  notify_on_delete: true
+
+# Kopya dosya tespiti (SHA-256 hash kontrolü)
+deduplicate:
+  enabled: true
+  notify_on_delete: true
+
+# Dosya uzantılarına göre klasörleme kuralları
+categories:
+  Belgeler: [".pdf", ".docx", ".doc", ".xlsx", ".pptx", ".txt", ".md", ".csv"]
+  Gorseller: [".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"]
+  Kurulumlar: [".exe", ".msi", ".deb", ".rpm", ".AppImage", ".dmg", ".pkg"]
+  Arsivler: [".zip", ".rar", ".7z", ".tar", ".gz"]
+  Videolar: [".mp4", ".mkv", ".avi", ".mov"]
+  Muzik: [".mp3", ".wav", ".flac", ".ogg"]
+
+# Yoksayılacak dosya uzantıları (indirme devam ederken dokunma)
+ignore_extensions: [".crdownload", ".part", ".tmp", ".download"]
